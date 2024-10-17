@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invitación a la Fiesta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .invitacion {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitacion">
+        <h1>Invitación Especial</h1>
+        <p id="mensaje">Cargando mensaje...</p>
+    </div>
+
+    <script>
+        // Función para obtener parámetros de la URL
+        function obtenerParametro(parametro) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parametro) || 'Usuario';
+        }
+
+        const nombre = obtenerParametro('nombre');
+        const apellido = obtenerParametro('apellido');
+        const mensaje = `Hola ${nombre} ${apellido}, esta es tu invitación para la fiesta el 2 de noviembre. Favor de compartir el boleto, ya que si pasa tu boleto ya no vas a poder pasar.`;
+
+        document.getElementById('mensaje').innerText = mensaje;
+    </script>
+</body>
+</html>
