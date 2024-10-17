@@ -45,7 +45,7 @@
 <body>
     <div class="invitacion">
         <div class="pumpkin">🎃</div> <!-- Emoji de calabaza -->
-        <h1>Invitación Especial</h1>
+        <h1>Early Access!!!</h1>
         <p id="mensaje">Cargando mensaje...</p>
     </div>
 
@@ -67,7 +67,8 @@
         const apellido = urlParams.get('apellido') || '';
         const numeroRegistro = urlParams.get('numero_registro');
 
-        let mensaje = `Hola ${nombre} ${apellido}, esta es tu invitación para la fiesta de Halloween el 2 de noviembre. ¡Prepárate para una noche espeluznante! Favor de NO compartir el boleto, ya que si pasa tu boleto ya no vas a poder pasar.`;
+        let mensaje = `Hola ${nombre} ${apellido}, esta es tu invitación para TrickOrShit el 2 de noviembre. A continuación se te dará un registro único, en la entrada se verificara este registro con la identificación que diste.
+                        Ahora si, disfruta la fiesta, que eres parte de esta primera edición.`;
         if (numeroRegistro) {
             mensaje += ` Número de registro: ${numeroRegistro}`;
         }
