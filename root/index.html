@@ -2,35 +2,50 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Invitación a la Fiesta</title>
+    <title>Invitación a la Fiesta de Halloween</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Creepster', cursive, Arial, sans-serif;
+            background-color: #2e2b2b;
+            color: #f2f2f2;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-image: url('https://i.imgur.com/Zz2cpSH.png'); /* Imagen de fondo tipo niebla */
+            background-size: cover;
+            background-attachment: fixed;
         }
         .invitacion {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 136, 0, 0.7);
             text-align: center;
+            max-width: 400px;
         }
         h1 {
-            color: #333;
+            color: #ff6f00;
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 5px #000;
         }
         p {
-            color: #555;
-            font-size: 18px;
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.6;
         }
+        .pumpkin {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap'); /* Fuente estilo Halloween */
     </style>
 </head>
 <body>
     <div class="invitacion">
+        <div class="pumpkin">🎃</div> <!-- Emoji de calabaza -->
         <h1>Invitación Especial</h1>
         <p id="mensaje">Cargando mensaje...</p>
     </div>
@@ -44,7 +59,7 @@
 
         const nombre = obtenerParametro('nombre');
         const apellido = obtenerParametro('apellido');
-        const mensaje = `Hola ${nombre} ${apellido}, esta es tu invitación para la fiesta el 2 de noviembre. Favor de compartir el boleto, ya que si pasa tu boleto ya no vas a poder pasar.`;
+        const mensaje = `Hola ${nombre} ${apellido}, esta es tu invitación para la fiesta de Halloween el 2 de noviembre. ¡Prepárate para una noche espeluznante! Favor de NO compartir el boleto, ya que si pasa tu boleto ya no vas a poder pasar.`;
 
         document.getElementById('mensaje').innerText = mensaje;
     </script>
