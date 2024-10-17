@@ -50,15 +50,22 @@
     </div>
 
     <script>
-        // Función para obtener parámetros de la URL
-        function obtenerParametro(parametro) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(parametro);
+        // Función para desencriptar parámetros de la URL
+        function desencriptarParametro(parametro) {
+            try {
+                const decodedString = atob(parametro);
+                return new URLSearchParams(decodedString);
+            } catch (e) {
+                return new URLSearchParams();
+            }
         }
 
-        const nombre = obtenerParametro('nombre') || '';
-        const apellido = obtenerParametro('apellido') || '';
-        const numeroRegistro = obtenerParametro('numero_registro');
+        const parametrosEncriptados = new URLSearchParams(window.location.search).get('data');
+        const urlParams = desencriptarParametro(parametrosEncriptados);
+
+        const nombre = urlParams.get('nombre') || '';
+        const apellido = urlParams.get('apellido') || '';
+        const numeroRegistro = urlParams.get('numero_registro');
 
         let mensaje = `Hola ${nombre} ${apellido}, esta es tu invitación para la fiesta de Halloween el 2 de noviembre. ¡Prepárate para una noche espeluznante! Favor de NO compartir el boleto, ya que si pasa tu boleto ya no vas a poder pasar.`;
         if (numeroRegistro) {
